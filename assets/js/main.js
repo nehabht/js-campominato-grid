@@ -39,7 +39,8 @@ generateNumbers(100);
 
 
 function selectElements(selector){
-    const cells = document.querySelector(selector);
+    const cells = document.querySelectorAll(selector);
+    console.log(cells)
     const numbers = generateNumbers()
 
     for (let i = 0; i <= cells.length; i++) {
@@ -48,8 +49,9 @@ function selectElements(selector){
         // appendi il numero generato alla cella 
         const spanElement = document.createElement('span')
         spanElement.append(numbers[i])
+        
         cell.append(spanElement)
-        console.log(this,i)
+        console.log(spanElement)
        
     }
 
