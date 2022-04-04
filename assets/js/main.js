@@ -24,15 +24,18 @@ generateGrid('.cells', 'div', 'cell', 100)
 const orderNumberList = []
 
 function generateNumbers(limit){
+    const orderNumberList = []
 
     for (let i = 1; i<=limit; i++){
         orderNumberList.push(i)
         
     }
-    console.log(orderNumberList) 
+
+    return orderNumberList;
+    
 }
 
-generateNumbers(100);
+console.log(generateNumbers(100));
 
 
 // appendere i numeri generati nella dom ovvero nelle singole celle
@@ -41,17 +44,20 @@ generateNumbers(100);
 function selectElements(selector){
     const cells = document.querySelectorAll(selector);
     console.log(cells)
-    const numbers = generateNumbers()
+    const numbers = generateNumbers(100)
+    
 
     for (let i = 0; i <= cells.length; i++) {
         const cell = cells[i]
         
         // appendi il numero generato alla cella 
-        const spanElement = document.createElement('span')
-        spanElement.append(numbers[i])
         
+        const spanElement = document.createElement('span')
+
+        spanElement.append(numbers[i])
+
         cell.append(spanElement)
-        console.log(spanElement)
+        
        
     }
 
