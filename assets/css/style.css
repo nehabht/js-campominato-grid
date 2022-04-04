@@ -68,3 +68,7 @@ header{
     justify-content: center;
 
 }
+
+.active_blu{
+    background-color: cornflowerblue;
+}
