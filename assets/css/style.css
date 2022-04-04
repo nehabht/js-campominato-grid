@@ -18,6 +18,10 @@ header{
 .container_header{
     width: 1000px;
     margin: 0 auto;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo{
@@ -31,3 +35,6 @@ header{
     height: auto;
 }
 
+.form-select{
+    width: 200px;
+}
