@@ -36,21 +36,21 @@ formElement.addEventListener("submit", function (event) {
             console.log('easy')
             generateGrid('.cells', 'div', 'cell', limit)
             generateNumbers(limit)
-            selectElements('.cell')
+            
             
         }else if (levelElement === "2"){
             limit = 81
             console.log('e')
             generateGrid('.cells', 'div', 'cell', limit)
             generateNumbers(limit)
-            selectElements('.cell')
+            
             
         }else if (levelElement === "3"){
             limit = 49
             console.log('d')
             generateGrid('.cells', 'div', 'cell', limit)
             generateNumbers(limit)
-            selectElements('.cell')
+            
             
 
         }
@@ -59,6 +59,7 @@ formElement.addEventListener("submit", function (event) {
     }
 
     const levelChange = levelchangeF()
+    selectElements('.cell')
 
 
 
@@ -76,6 +77,8 @@ formElement.addEventListener("submit", function (event) {
 
 function generateGrid(selector, tag_name, class_name, limit) {
     const cellsElement = document.querySelector(selector)
+
+    cellsElement.innerHTML = "";
   
     for (let i = 1; i <= limit; i++) {
       const cellItem = document.createElement(tag_name);
@@ -86,7 +89,7 @@ function generateGrid(selector, tag_name, class_name, limit) {
 }
 
 
-// grigial easy level
+
 
 // generateGrid('.cells', 'div', 'cell', limit)
 
@@ -114,6 +117,8 @@ function generateNumbers(limit){
 function selectElements(selector){
     const cells = document.querySelectorAll(selector);
     const numbers = generateNumbers(limit)
+
+    
     
 
     for (let i = 0; i < cells.length; i++) {
