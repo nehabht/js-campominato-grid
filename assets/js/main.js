@@ -9,40 +9,64 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
 
 
-let limit = 100
+let limit = 0
 
 
 // cambia il valore di limit in base all'option del livello selezionato
 // seleziona form dom
 
-/*
+
 let formElement = document.querySelector("form")
 
 let generate_grid = document.querySelector("button")
 
-formElement.addEventListener("submit", function (event){
+formElement.addEventListener("submit", function (event) {
     event.preventDefault()
-
-    let levelElement = document.getElementById("level").value;
-
     
 
-    if (levelElement === "Easy"){
-        limit = 100;
-        console.log("easy level")
-    } else if (levelElement === "Medium"){
-        limit = 81;
-        console.log("m level")
-    } else if (levelElement === "Difficult"){
-        limit = 49
-        console.log("d level")
+
+    function levelchangeF(){
+        
+    
+        let levelElement = document.getElementById("level").value;
+
+    
+        if (levelElement === "1"){
+            limit = 100
+            console.log('easy')
+            generateGrid('.cells', 'div', 'cell', limit)
+            generateNumbers(limit)
+            selectElements('.cell')
+            
+        }else if (levelElement === "2"){
+            limit = 81
+            console.log('e')
+            generateGrid('.cells', 'div', 'cell', limit)
+            generateNumbers(limit)
+            selectElements('.cell')
+            
+        }else if (levelElement === "3"){
+            limit = 49
+            console.log('d')
+            generateGrid('.cells', 'div', 'cell', limit)
+            generateNumbers(limit)
+            selectElements('.cell')
+            
+
+        }
+    
+        return
     }
 
+    const levelChange = levelchangeF()
 
-    console.log(limit)
+
+
+
 })
 
-*/
+
+
 
 
 
@@ -64,11 +88,10 @@ function generateGrid(selector, tag_name, class_name, limit) {
 
 // grigial easy level
 
-generateGrid('.cells', 'div', 'cell', limit)
+// generateGrid('.cells', 'div', 'cell', limit)
 
 
 // genero i numeri da 1 a 100 per easy level
-const orderNumberList = []
 
 function generateNumbers(limit){
     const orderNumberList = []
@@ -82,7 +105,7 @@ function generateNumbers(limit){
     
 }
 
-console.log(generateNumbers(limit));
+// console.log(generateNumbers(limit));
 
 
 // appendere i numeri generati nella dom ovvero nelle singole celle
@@ -112,7 +135,7 @@ function selectElements(selector){
     return
 }
 
-selectElements('.cell')
+// selectElements('.cell')
 
 
 
